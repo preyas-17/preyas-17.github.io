@@ -43,7 +43,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.ProfileImage({ src: "profile_pic.jpg", alt: "Profile picture", borderRadius: 12, cacheBust: true }),
+    Component.ProfileImage({ src: "images/profile_pic.jpg", alt: "Profile picture", borderRadius: 12, cacheBust: true }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],

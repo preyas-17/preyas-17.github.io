@@ -156,7 +156,7 @@ CGPA: **9.4 / 10**
 - ⭐ **Exceeded Expectations** — Ericsson (2018)
 - 🏆 **SPOT Award** — Ericsson (Critical business deliverables)
 - 🎓 **Gold Medalist** — B.Tech Academics
-- 🇮🇳 **MHRD Scholarship** — GATE 2020 (AIR 2192)
+- 🎓 **MHRD Scholarship** — GATE 2020 (AIR 2192)
 
 ---
 

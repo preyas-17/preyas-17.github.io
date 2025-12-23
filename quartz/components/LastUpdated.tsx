@@ -14,16 +14,17 @@ function formatLongDate(date: Date, locale: string): string {
 
 function tryGetGitHeadDate(): Date | undefined {
   try {
-    // %cI is committer date, strict ISO 8601
-    const iso = execSync("git log -1 --format=%cI", {
+    // %cs is committer date (YYYY-MM-DD). Using date-only avoids timezone-related
+    // day shifts (e.g. commits near midnight showing the previous day in UTC).
+    const dateOnly = execSync("git log -1 --format=%cs", {
       stdio: ["ignore", "pipe", "ignore"],
       encoding: "utf8",
     })
       .trim()
       .split(/\r?\n/)[0]
 
-    if (!iso) return undefined
-    const d = new Date(iso)
+    if (!dateOnly) return undefined
+    const d = new Date(`${dateOnly}T00:00:00`)
     return Number.isNaN(d.getTime()) ? undefined : d
   } catch {
     return undefined

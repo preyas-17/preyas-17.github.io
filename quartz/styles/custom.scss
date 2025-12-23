@@ -15,3 +15,52 @@
 .center > article strong a {
 	color: var(--secondary);
 }
+
+.title-with-avatar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.title-with-avatar > h1 {
+	margin: 0;
+}
+
+.title-with-avatar .title-avatar {
+	width: 176px;
+	height: 176px;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+.about-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.about-header-text {
+	flex: 1 1 320px;
+}
+
+.about-header-text > h1 {
+	margin: 0;
+}
+
+.about-header-text > p {
+	margin: 0.35rem 0;
+}
+
+.about-avatar {
+	width: 176px;
+	height: 176px;
+	max-width: 176px;
+	object-fit: cover;
+	border-radius: 12px;
+	margin: 0;
+	flex: 0 0 auto;
+}

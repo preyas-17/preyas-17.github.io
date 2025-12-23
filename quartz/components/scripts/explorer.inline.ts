@@ -111,12 +111,26 @@ function createFolderNode(
   const folderPath = node.slug
   folderContainer.dataset.folderpath = folderPath
 
+  const firstLeafSlug = (n: FileTrieNode): FullSlug => {
+    for (const child of n.children) {
+      if (child.isFolder) {
+        const slug = firstLeafSlug(child)
+        if (slug) return slug
+      } else {
+        return child.slug
+      }
+    }
+
+    // Fallback: navigate to the folder listing if it's empty
+    return n.slug
+  }
+
   if (opts.folderClickBehavior === "link") {
     // Replace button with link for link behavior
     const button = titleContainer.querySelector(".folder-button") as HTMLElement
     const a = document.createElement("a")
-    a.href = resolveRelative(currentSlug, folderPath)
-    a.dataset.for = folderPath
+    a.href = resolveRelative(currentSlug, firstLeafSlug(node))
+    a.dataset.for = firstLeafSlug(node)
     a.className = "folder-title"
     a.textContent = node.displayName
     button.replaceWith(a)

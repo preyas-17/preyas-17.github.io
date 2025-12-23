@@ -52,7 +52,7 @@ To support headless usage, I implemented a boot-time WiFi initialization script 
 
 This ensures the system becomes network-accessible immediately after boot, without manual intervention.
 
-![BeagleBone Black bring-up setup](images/beaglebone-black-bringup.jpg)
+![BeagleBone Black bring-up setup](../images/beaglebone-black-bringup.jpg)
 
 ### Project Nature
 

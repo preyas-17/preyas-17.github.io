@@ -27,6 +27,12 @@ export default (() => {
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
     const iconPath = joinSegments(baseDir, "static/icon.png")
 
+    // Some deployments block inline scripts via CSP, which prevents
+    // Markdown-embedded JS redirects from running. Use a meta refresh on the
+    // homepage to reliably redirect to About Me.
+    const isHomePage = fileData.slug === "index"
+    const homeRedirectTarget = joinSegments(baseDir, "About-Me")
+
     // Url of current page
     const socialUrl =
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
@@ -40,6 +46,7 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        {isHomePage && <meta httpEquiv="refresh" content={`0; url=${homeRedirectTarget}`} />}
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />

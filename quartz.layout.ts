@@ -40,17 +40,28 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        const aIsAbout = !a.isFolder && a.displayName.toLowerCase() === "about me"
+        const bIsAbout = !b.isFolder && b.displayName.toLowerCase() === "about me"
+
+        if (aIsAbout && !bIsAbout) return -1
+        if (!aIsAbout && bIsAbout) return 1
+
+        // Default behavior: folders first, then files; alphabetical within each group
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+
+        if (!a.isFolder && b.isFolder) return 1
+        return -1
+      },
+    }),
   ],
   right: [
-    Component.DesktopOnly(
-      Component.ProfileImage({
-        src: "images/profile_pic.jpg",
-        alt: "Profile picture",
-        borderRadius: 12,
-        cacheBust: true,
-      }),
-    ),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -71,7 +82,26 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        const aIsAbout = !a.isFolder && a.displayName.toLowerCase() === "about me"
+        const bIsAbout = !b.isFolder && b.displayName.toLowerCase() === "about me"
+
+        if (aIsAbout && !bIsAbout) return -1
+        if (!aIsAbout && bIsAbout) return 1
+
+        // Default behavior: folders first, then files; alphabetical within each group
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+
+        if (!a.isFolder && b.isFolder) return 1
+        return -1
+      },
+    }),
   ],
   right: [],
 }

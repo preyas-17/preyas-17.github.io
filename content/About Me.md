@@ -1,7 +1,9 @@
-# Preyas Sharma
-**Embedded Software Engineer | Embedded Linux | FPGA–SoC Co-Design**
+<div class="about-header">
+  <div class="about-header-text">
+    <h1>Preyas Sharma</h1>
+    <p><strong>Embedded Software Engineer | Embedded Linux | FPGA–SoC Co-Design</strong></p>
+    <p>📍 Hyderabad, India</p>
 
-📍 Hyderabad, India  
 
 <a href="mailto:preyas17@zohomail.in" aria-label="Email">
   <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -23,6 +25,10 @@
   </svg>
   GitHub
 </a>
+
+  </div>
+  <img class="about-avatar" src="images/profile_pic.jpg" alt="Profile picture" />
+</div>
 
 
 

@@ -26,9 +26,6 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.TagList(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-  ],
-  left: [
-    Component.PageTitle(),
     Component.MobileOnly(
       Component.ProfileImage({
         src: "images/profile_pic.jpg",
@@ -37,6 +34,9 @@ export const defaultContentPageLayout: PageLayout = {
         cacheBust: true,
       }),
     ),
+  ],
+  left: [
+    Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [

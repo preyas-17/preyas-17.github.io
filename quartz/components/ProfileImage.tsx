@@ -11,7 +11,7 @@ type ProfileImageOptions = {
 }
 
 export default ((opts?: ProfileImageOptions) => {
-  const ProfileImage: QuartzComponent = ({ fileData, ctx }: QuartzComponentProps) => {
+  const ProfileImage: QuartzComponent = ({ fileData, ctx, displayClass }: QuartzComponentProps) => {
     const baseDir = pathToRoot(fileData.slug!)
     const baseSrc = joinSegments(baseDir, opts?.src ?? "profile_pic.jpg")
     const src = (opts?.cacheBust ?? true) ? `${baseSrc}?v=${ctx.buildId}` : baseSrc
@@ -27,7 +27,7 @@ export default ((opts?: ProfileImageOptions) => {
     }
 
     return (
-      <div class="profile-image">
+      <div class={["profile-image", displayClass].filter(Boolean).join(" ")}>
         <img src={src} alt={alt} style={style} />
       </div>
     )

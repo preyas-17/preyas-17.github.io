@@ -1,24 +1,3 @@
-<div>
-  Redirecting to <a href="./About-Me">About Me</a>…
-</div>
-
-<script>
-  // Quartz renders Markdown into the page body, so we redirect via JS.
-  // Using a relative URL keeps this compatible with non-root deployments.
-  ;(() => {
-    const target = "./About-Me"
-    try {
-      window.location.replace(target)
-    } catch {
-      window.location.href = target
-    }
-  })()
-</script>
-
-<noscript>
-  JavaScript is disabled — use the link above.
-</noscript>
-
 # Preyas Sharma
 **Embedded Software Engineer | Embedded Linux | FPGA–SoC Co-Design**
 

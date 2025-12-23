@@ -62,6 +62,9 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       const crumb = formatCrumb(node.displayName, fileData.slug!, simplifySlug(node.slug))
       if (idx === 0) {
         crumb.displayName = options.rootName
+        // Always send users to About Me when they click the root crumb.
+        // Use resolveRelative so this works from nested folder pages on GitHub Pages.
+        crumb.path = resolveRelative(fileData.slug!, "About-Me")
       }
 
       // For last node (current page), set empty path

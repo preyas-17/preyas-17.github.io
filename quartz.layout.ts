@@ -26,14 +26,6 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.TagList(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.MobileOnly(
-      Component.ProfileImage({
-        src: "images/profile_pic.jpg",
-        alt: "Profile picture",
-        borderRadius: 12,
-        cacheBust: true,
-      }),
-    ),
   ],
   left: [
     Component.PageTitle(),

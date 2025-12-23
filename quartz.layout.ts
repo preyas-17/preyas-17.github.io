@@ -5,7 +5,12 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.LastUpdated(),
+      condition: (page) => page.fileData.slug === "About-Me",
+    }),
+  ],
   footer: Component.Footer({
     links: {
       LinkedIn: "https://linkedin.com/in/preyas17",

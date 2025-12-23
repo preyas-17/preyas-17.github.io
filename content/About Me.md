@@ -172,4 +172,3 @@ If it boots cleanly, streams at line rate, and survives long-haul testing—I’
 
 ---
 
-*Last updated: December 21, 2025*

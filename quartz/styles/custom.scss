@@ -2,3 +2,16 @@
 @use "./themes";
 
 // put your custom CSS here!
+
+// Ensure links in the main article body are visibly styled.
+// Some markdown links may not receive `internal`/`external` classes,
+// so we apply a safe default using existing theme variables.
+.center > article a {
+	color: var(--secondary);
+	text-decoration: underline;
+	text-decoration-color: var(--secondary);
+}
+
+.center > article strong a {
+	color: var(--secondary);
+}

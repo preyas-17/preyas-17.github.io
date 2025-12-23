@@ -70,8 +70,8 @@ At MathWorks, I design and deliver **embedded platforms used for industrial visi
   - Enabled seamless application integration with media frameworks and hardware accelerators.
 
 - **Yocto / Meta-Layer Ownership**
-  - Actively contributed to and maintained the **Meta-MathWorks Yocto layer**.
-  - Supported **PetaLinux 2023.1**, multi-Vivado compatibility, and scalable BSP infrastructure across multiple SoCs.
+  - Actively contributed to and maintained the **[Meta-MathWorks Yocto layer](https://github.com/mathworks/meta-mathworks/tree/petalinux-v2023.1)**.
+  - Supported **[PetaLinux 2023.1](https://github.com/mathworks/Petalinux/releases/tag/mathworks_zynq_R26.1.0)**, multi-Vivado compatibility, and scalable BSP infrastructure across multiple SoCs.
 
 - **FPGA & HDL-Assisted Systems**
   - Enhanced a **WLAN HDL receiver system** on Zynq ZC706 by implementing higher modulation schemes.
